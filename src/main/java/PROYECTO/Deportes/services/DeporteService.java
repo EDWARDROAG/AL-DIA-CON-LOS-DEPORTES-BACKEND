@@ -1,6 +1,6 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.services;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.models.DeporteEntity;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.repository.DeporteRepository;
+package PROYECTO.Deportes.services;
+import PROYECTO.Deportes.models.DeporteEntity;
+import PROYECTO.Deportes.repository.DeporteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

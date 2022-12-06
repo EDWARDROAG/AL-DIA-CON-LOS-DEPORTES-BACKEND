@@ -9,13 +9,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>PROYECTO.ALQUILA.PC</groupId>
-	<artifactId>ALQUILA-PC</artifactId>
+	<artifactId>Deportes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ALQUILA-PC</name>
+	<name>Deportes</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2021.0.4</spring-cloud.version>
+	 <maven.compiler.source>1.8</maven.compiler.source>
+	 <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>

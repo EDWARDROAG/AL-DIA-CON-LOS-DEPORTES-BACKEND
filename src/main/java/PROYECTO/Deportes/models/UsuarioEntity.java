@@ -1,4 +1,4 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.models;
+package PROYECTO.Deportes.models;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,8 +13,8 @@ public class UsuarioEntity {
 
     private String name;
     private Integer edad;
-    private String correo
-    private Integer contraseña
+    private String correo;
+    private Integer contrasenha;
 
     public UsuarioEntity() {
     }
@@ -51,11 +51,11 @@ public class UsuarioEntity {
         this.correo = correo;
     }
 
-    public Integer getContraseña() {
-        return contraseña;
+    public Integer getContrasenha() {
+        return contrasenha;
     }
 
-    public void setContraseña(Integer contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenha(Integer contrasenha) {
+        this.contrasenha = contrasenha;
     }
-
+}

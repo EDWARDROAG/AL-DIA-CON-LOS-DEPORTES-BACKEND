@@ -1,6 +1,6 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.services;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.models.MarcadorEntity;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.repository.MarcadorRepository;
+package PROYECTO.Deportes.services;
+import PROYECTO.Deportes.models.MarcadorEntity;
+import PROYECTO.Deportes.repository.MarcadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

@@ -1,5 +1,5 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.services;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.models.EquipoEntity;
+package PROYECTO.Deportes.services;
+import PROYECTO.Deportes.models.EquipoEntity;
 import java.util.List;
 import java.util.Optional;
 

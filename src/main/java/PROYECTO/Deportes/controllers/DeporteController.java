@@ -1,8 +1,8 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.controllers;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.models.RolEntity;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.models.UserEntity;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.services.IUserService;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.util.Roles;
+package PROYECTO.Deportes.controllers;
+
+
+import PROYECTO.Deportes.models.DeporteEntity;
+import PROYECTO.Deportes.services.IDeporteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +15,12 @@ import java.util.Optional;
 public class DeporteController {
 
     @Autowired
-    IUserService entityService;
+    IDeporteService entityService;
 
     @GetMapping("/api/Deporte/all")
     public ResponseEntity<?> getAll() {
        try {
-           List<UserEntity> list= entityService.getAllByRol(Roles.Deporte.ordinal());
+           List<DeporteEntity> list= entityService.getList();
            return  new ResponseEntity<>(list, HttpStatus.OK);
        }catch (Exception ex){
            return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);
@@ -31,7 +31,7 @@ public class DeporteController {
     public ResponseEntity<?> getById(@PathVariable("id") Integer id) {
 
         try {
-            Optional<UserEntity> entity= entityService.getById(id);
+            Optional<DeporteEntity> entity= entityService.getById(id);
             return  new ResponseEntity<>(entity, HttpStatus.OK);
         }catch (Exception ex){
             return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);
@@ -40,11 +40,11 @@ public class DeporteController {
 
     @PostMapping("/api/Deporte/save")
     public ResponseEntity<?> post(
-            @RequestBody UserEntity entity) {
+            @RequestBody DeporteEntity entity) {
 
         try {
-            entity.setRol(new RolEntity(Roles.Deporte.ordinal()));
-            UserEntity RestModel= entityService.add(entity);
+            //entity.setRol(new RolEntity(Roles.Deporte.ordinal()));
+            DeporteEntity RestModel= entityService.add(entity);
             return  new ResponseEntity<>(RestModel, HttpStatus.CREATED);
         }catch (Exception ex){
             return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);
@@ -54,12 +54,12 @@ public class DeporteController {
     }
 
     @PutMapping("/api/Deporte/update")
-    public ResponseEntity<?> put(@RequestBody UserEntity entity) {
+    public ResponseEntity<?> put(@RequestBody DeporteEntity entity) {
 
 
         try {
-            entity.setRol(new RolEntity(Roles.Deporte.ordinal()));
-            UserEntity RestModel= entityService.update(entity);
+            //entity.setRol(new RolEntity(Roles.Deporte.ordinal()));
+            DeporteEntity RestModel= entityService.update(entity);
             return  new ResponseEntity<>(RestModel, HttpStatus.CREATED);
         }catch (Exception ex){
             return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);

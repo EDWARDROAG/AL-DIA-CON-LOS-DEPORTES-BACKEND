@@ -1,6 +1,6 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.models;
+package PROYECTO.Deportes.models;
 import javax.persistence.*;
-import java.util.Set;
+
 
 
 @Entity
@@ -14,14 +14,14 @@ public class EquipoEntity {
     private String name;
     private Integer deporte_id;
 
-   
-    @OneToMany(optional = false, fetch = FetchType.EAGER)
-    private DeportesEntity deportes;
+
+//    @OneToMany( fetch = FetchType.EAGER)
+//    private DeporteEntity deportes;
 
 
     public EquipoEntity() {
     }
-    
+
 
     public EquipoEntity(int id) {
         this.id = id;
@@ -51,13 +51,13 @@ public class EquipoEntity {
         this.deporte_id = deporte_id;
     }
 
-    public DeportesEntity getDeportes() {
-        return deportes;
-    }
-
-    public void setDeportes(DeportesEntity deportes) {
-        this.deportes = deportes;
-    }
-
+//    public DeporteEntity getDeportes() {
+//        return deportes;
+//    }
+//
+//    public void setDeportes(DeporteEntity deportes) {
+//        this.deportes = deportes;
+//    }
+}
 
     

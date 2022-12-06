@@ -1,8 +1,7 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.controllers;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.models.RolEntity;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.models.UserEntity;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.services.IUserService;
-import PROYECTO.ALQUILA.PC.ALQUILA.PC.util.Roles;
+package PROYECTO.Deportes.controllers;
+
+import PROYECTO.Deportes.models.UsuarioEntity;
+import PROYECTO.Deportes.services.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +14,12 @@ import java.util.Optional;
 public class MarcadorController {
 
     @Autowired
-    IUserService entityService;
+    IUsuarioService entityService;
 
     @GetMapping("/api/Marcador/all")
     public ResponseEntity<?> getAll() {
        try {
-           List<UserEntity> list= entityService.getAllByRol(Roles.Marcador.ordinal());
+           List<UsuarioEntity> list= entityService.getList();
            return  new ResponseEntity<>(list, HttpStatus.OK);
        }catch (Exception ex){
            return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);
@@ -31,7 +30,7 @@ public class MarcadorController {
     public ResponseEntity<?> getById(@PathVariable("id") Integer id) {
 
         try {
-            Optional<UserEntity> entity= entityService.getById(id);
+            Optional<UsuarioEntity> entity= entityService.getById(id);
             return  new ResponseEntity<>(entity, HttpStatus.OK);
         }catch (Exception ex){
             return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);
@@ -40,11 +39,11 @@ public class MarcadorController {
 
     @PostMapping("/api/Marcador/save")
     public ResponseEntity<?> post(
-            @RequestBody UserEntity entity) {
+            @RequestBody UsuarioEntity entity) {
 
         try {
-            entity.setRol(new RolEntity(Roles.Marcador.ordinal()));
-            UserEntity RestModel= entityService.add(entity);
+            //entity.setRol(new RolEntity(Roles.Marcador.ordinal()));
+            UsuarioEntity RestModel= entityService.add(entity);
             return  new ResponseEntity<>(RestModel, HttpStatus.CREATED);
         }catch (Exception ex){
             return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);
@@ -54,12 +53,12 @@ public class MarcadorController {
     }
 
     @PutMapping("/api/Marcador/update")
-    public ResponseEntity<?> put(@RequestBody UserEntity entity) {
+    public ResponseEntity<?> put(@RequestBody UsuarioEntity entity) {
 
 
         try {
-            entity.setRol(new RolEntity(Roles.Marcador.ordinal()));
-            UserEntity RestModel= entityService.update(entity);
+            //entity.setRol(new RolEntity(Roles.Marcador.ordinal()));
+            UsuarioEntity RestModel= entityService.update(entity);
             return  new ResponseEntity<>(RestModel, HttpStatus.CREATED);
         }catch (Exception ex){
             return  new ResponseEntity<>("Error:"+ex.getMessage(), HttpStatus.BAD_REQUEST);

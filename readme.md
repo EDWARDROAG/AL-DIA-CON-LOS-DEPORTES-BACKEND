@@ -132,3 +132,18 @@ hola a todos
 
 
  ssh -i ssh-key-2022-10-05.key opc@140.238.152.178
+ 
+ mysql -u root -p
+ 
+ Eduar123.
+ 
+ 
+ sudo firewall-cmd --permanent --add-port=3306/tcp
+ 
+ 
+ ps -A |grep java
+ 
+ kill -9 PID
+ 
+ ps ax | grep java | grep -v 'grep' | cut -d '?' -f1 | xargs kill -9
+ 

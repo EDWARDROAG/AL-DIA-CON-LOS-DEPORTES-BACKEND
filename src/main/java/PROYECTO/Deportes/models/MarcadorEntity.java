@@ -1,4 +1,4 @@
-package PROYECTO.ALQUILA.PC.ALQUILA.PC.models;
+package PROYECTO.Deportes.models;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,15 +13,12 @@ public class MarcadorEntity {
     private int id_equipo2;
     private int resultado_equipo1;
     private int resultado_equipo2;
-    private String  fecha_de_encuentro;
-
-
-
+    private String fecha_de_encuentro;
 
 
     public MarcadorEntity() {
     }
-    
+
 
     public MarcadorEntity(int id) {
         this.id = id;
@@ -75,6 +72,6 @@ public class MarcadorEntity {
         this.fecha_de_encuentro = fecha_de_encuentro;
     }
 
-
+}
 
     
